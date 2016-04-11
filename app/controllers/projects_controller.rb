@@ -1,0 +1,34 @@
+class ProjectsController < ApplicationController
+  def index
+  end
+
+  def new
+    @project = Project.new
+  end
+
+  def create
+    @project = Project.new(project_params)
+
+    if @project.save
+      # Options for using redirect with flash:
+      #flash[:notice] = "Project had been created"
+      #redirect_to @project
+      #redirect_to @project, notice: "Project has been created."   # Can also use "alert:"
+      redirect_to @project, flash: { success:"Project has been created."}
+
+    else
+      #nope
+    end
+  end
+
+  def show
+    @project = Project.find(params[:id])
+  end
+
+  private
+
+  def project_params
+    params.require(:project).permit(:name, :description)
+  end
+
+end
