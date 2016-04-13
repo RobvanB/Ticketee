@@ -15,9 +15,9 @@ class ProjectsController < ApplicationController
       #redirect_to @project
       #redirect_to @project, notice: "Project has been created."   # Can also use "alert:"
       redirect_to @project, flash: { success:"Project has been created."}
-
     else
-      #nope
+      flash.now[:alert] = "Project has not been created"
+      render "new"
     end
   end
 
