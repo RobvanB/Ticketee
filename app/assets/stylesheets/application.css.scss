@@ -1,0 +1,88 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "projects";
+@import "responsive";
+
+// Page header
+.page-header{
+  position:relative;
+  padding-bottom:0px;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    max-width: 55%;
+  }
+}
+
+header{
+  @extend .page-header;
+  position: relative;
+  padding-bottom: 0px;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+}
+
+
+ul.actions {
+  @extend .list-unstyled;
+  @extend .list-inline;
+}
+
+// Buttons
+a.new, a.edit, a.delete {
+  @extend .btn;
+
+  &:before{
+    font-family: "FontAwesome";
+    padding-right: 0.5em;
+  }
+}
+
+a.new, {
+  @extend .btn-success;
+
+  &:before{
+    @extend .fa-plus;
+  }
+}
+
+a.edit{
+  @extend .btn-primary;
+
+  &:before{
+    @extend .fa-pencil;
+  }
+}
+
+a.delete{
+  @extend .btn-danger;
+
+  &:before{
+    @extend .fa-trash;
+  }
+}
+
+// Alerts
+.alert-notice {
+  @etend .alert-success;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
+// Forms
+form {
+  max-width: 500px;
+}
+
+// Body
+body {
+  padding-top: 70px;
+}
