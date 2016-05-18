@@ -41,6 +41,9 @@ gem "font-awesome-rails", "~> 4.3"
 # Simple Form
 gem "simple_form", "~> 3.1.0"
 
+# Devise for user Access
+gem "devise", "~> 3.4.1"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
