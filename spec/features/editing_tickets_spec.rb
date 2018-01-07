@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.feature "Users can edit existing tickets" do
-  let(:author) { FactoryGirl.create(:user) }
-  let(:project) { FactoryGirl.create(:project) }                  #Creates local 'method' called project
-  let(:ticket) { FactoryGirl.create(:ticket, project: project, author: author) }  #Calls the new project method
+  let(:author) { FactoryBot.create(:user) }
+  let(:project) { FactoryBot.create(:project) }                  #Creates local 'method' called project
+  let(:ticket) { FactoryBot.create(:ticket, project: project, author: author) }  #Calls the new project method
 
   before do
     visit project_ticket_path(project, ticket)
