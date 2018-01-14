@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ProjectsController, type: :controller do
   it "handles a missing project correctly" do
-    get :show, id: "not-here"
+    get :show, params: { id: "not-here" }
 
     expect(response).to redirect_to(projects_path)
 
